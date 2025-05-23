@@ -1,0 +1,26 @@
+{% extends "estoque/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h1>Dashboard</h1>
+
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>Produtos Registrados</h5>
+        <p class="display-6">{{ total_registrados }}</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>Total de Unidades em Estoque</h5>
+        <p class="display-6">{{ total_unidades }}</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3">
+        <h5>Valor Total Gasto em Estoque</h5>
+        <p class="display-6">R$ {{ total_gasto|floatformat:2 }}</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

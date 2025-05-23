@@ -1,0 +1,39 @@
+{% extends "estoque/base.html" %}
+{% block title %}Lista de Produtos{% endblock %}
+{% block content %}
+<h1>Lista de Produtos</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>Marca</th>
+      <th>Preço - Custo</th>
+      <th>Preço - Venda</th>
+      <th>Estoque</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for produto in object_list %}
+    <tr>
+      <td>{{ produto.nome }}</a></td>
+      <td>{{ produto.categoria }}</td>
+      <td>{{ produto.marca }}</td>
+      <td>R$ {{ produto.preco_custo }}</td>
+      <td>R$ {{ produto.preco }}</td>
+      <td>{{ produto.estoque }}</td>
+      <td>
+        <a class="btn btn-sm btn-detalhe" href="{% url 'estoque:detalhe' produto.pk %}">Detalhes</a>
+        <a class="btn btn-sm btn-warning" href="{% url 'estoque:editar' produto.pk %}">Editar</a>
+        <a class="btn btn-sm btn-danger"  href="{% url 'estoque:excluir' produto.pk %}">Excluir</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">Nenhum produto cadastrado.</td></tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+  <a href="{% url 'estoque:novo' %}"   class="btn btn-success">Novo Produto</a>
+{% endblock %}

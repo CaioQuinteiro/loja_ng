@@ -1,0 +1,18 @@
+{% extends "estoque/base.html" %}
+{% block title %}
+  {% if object %}Editar Categoria{% else %}Nova Categoria{% endif %}
+{% endblock %}
+{% block content %}
+  <h1>{% if object %}Editar{% else %}Nova{% endif %} Categoria</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.nome.label_tag }}
+      {{ form.nome }}
+    </div>
+    <button class="btn btn-primary" type="submit">
+      {% if object %}Atualizar{% else %}Salvar{% endif %}
+    </button>
+    <a class="btn btn-secondary" href="{% url 'estoque:categoria_lista' %}">Cancelar</a>
+  </form>
+{% endblock %}

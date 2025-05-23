@@ -1,0 +1,31 @@
+{% extends "estoque/base.html" %}
+{% block title %}Categorias{% endblock %}
+{% block content %}
+  <h1>Categorias</h1>
+  <table class="table">
+
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for cat in categorias %}
+      <tr>
+        <td>{{ cat.nome }}</td>
+
+        <td>
+          <a href="{% url 'estoque:categoria_editar' cat.pk %}" class="btn btn-sm btn-warning">Editar</a>
+          <a href="{% url 'estoque:categoria_excluir' cat.pk %}" class="btn btn-sm btn-danger">Excluir</a>
+        </td>
+      </tr>
+      {% empty %}
+      <tr><td colspan="6">Nenhuma categoria cadastrado.</td></tr>
+      {% endfor %}
+    </tbody>
+    
+  </table>
+  <a class="btn btn-success mb-3" href="{% url 'estoque:categoria_novo' %}">Nova Categoria</a>
+
+{% endblock %}

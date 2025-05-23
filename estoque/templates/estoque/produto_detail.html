@@ -1,0 +1,17 @@
+{% extends "estoque/base.html" %}
+{% block title %}Detalhe: {{ object.nome }}{% endblock %}
+{% block content %}
+<h1>{{ object.nome }}</h1>
+<ul class="list-group">
+  <li class="list-group-item"><strong>SKU:</strong> {{ object.sku }}</li>
+  <li class="list-group-item"><strong>Categoria:</strong> {{ object.categoria }}</li>
+  <li class="list-group-item"><strong>Tamanho:</strong> {{ object.tamanho }}</li>
+  <li class="list-group-item"><strong>Descrição:</strong> {{ object.descricao }}</li>
+  <li class="list-group-item"><strong>Marca:</strong> {{ object.marca }}</li>
+  <li class="list-group-item"><strong>Preço Custo:</strong> R$ {{ object.preco_custo }}</li>
+  <li class="list-group-item"><strong>Preço:</strong> R$ {{ object.preco }}</li>
+  <li class="list-group-item"><strong>Cor:</strong> {{ object.cor }}</li>
+  <li class="list-group-item"><strong>Estoque:</strong> {{ object.estoque }}</li>
+</ul>
+<a class="btn btn-secondary mt-3" href="{% url 'estoque:lista' %}">Voltar</a>
+{% endblock %}

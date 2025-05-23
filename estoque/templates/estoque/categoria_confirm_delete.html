@@ -1,0 +1,11 @@
+{% extends "estoque/base.html" %}
+{% block title %}Excluir Categoria{% endblock %}
+{% block content %}
+  <h1>Excluir "{{ object.nome }}"?</h1>
+  <p>Tem certeza que deseja remover esta categoria?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Sim, excluir</button>
+    <a class="btn btn-secondary" href="{% url 'estoque:categoria_lista' %}">Não, voltar</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "estoque/base.html" %}
+{% block title %}Nova Movimentação{% endblock %}
+{% block content %}
+  <h1>Registrar Movimentação de Estoque</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.produto.label_tag }}
+      {{ form.produto }}
+    </div>
+    <div class="mb-3">
+      {{ form.tipo.label_tag }}
+      {{ form.tipo }}
+    </div>
+    <div class="mb-3">
+      {{ form.quantidade.label_tag }}
+      {{ form.quantidade }}
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+    <a class="btn btn-secondary" href="{% url 'estoque:mov_lista' %}">Cancelar</a>
+  </form>
+{% endblock %}
