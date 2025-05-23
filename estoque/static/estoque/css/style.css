@@ -66,27 +66,24 @@ h1 {
 /*NAVBAR*/
 
 nav {
-  background-color: #343a40;          /* tom escuro para contraste */
-  padding: 0.75rem 1rem;              /* espaçamento interno */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* leve sombra */
-  display: flex;                      /* para alinhar os botões em linha */
-  gap: 1rem;                        /* espaço entre botões */
+  background-color: #343a40;         
+  padding: 0.75rem 1rem;              
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+  display: flex;                      
+  gap: 1rem;                        
 }
 
-/* Botões dentro da nav */
 nav a.btn {
-  color: #ffffff;                     /* texto claro */
+  color: #ffffff;                     
   font-weight: 500;
   transition: background-color .2s;
   text-decoration: none;
 }
 
-/* Estados hover nos botões da nav */
 nav a.btn:hover {
   background-color: rgba(255,255,255,0.1);
 }
 
-/* Se quiser cores específicas para cada botão */
 nav a.btn-primary:hover   { background-color: #5a6268; }
 
 nav a.btn-success:hover   { background-color: #5a6268; }
